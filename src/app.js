@@ -183,7 +183,9 @@ const doLogin = (userName, password) => new Promise((resolve, reject) => {
     .then((formData) => login(formData))
     .then(() => resolve('登录成功'))
     .catch((error) => {
-      logger.error(`登录失败:${JSON.stringify(error)}`);
+      const errStr = `登录失败:${JSON.stringify(error)}`;
+      logger.error(errStr);
+       throw new Error(errStr);
       reject(error);
     });
 });
