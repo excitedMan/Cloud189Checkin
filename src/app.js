@@ -15,6 +15,7 @@ log4js.configure({
   categories: { default: { appenders: ['vcr', 'out'], level: 'info' } },
 });
 
+
 const logger = log4js.getLogger();
 const JSEncrypt = require('node-jsencrypt');
 // process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = '0'
