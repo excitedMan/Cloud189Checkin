@@ -15,7 +15,6 @@ log4js.configure({
   categories: { default: { appenders: ['vcr', 'out'], level: 'info' } },
 });
 
-
 const logger = log4js.getLogger();
 const JSEncrypt = require('node-jsencrypt');
 // process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = '0'
@@ -127,6 +126,7 @@ const login = (formData) => new Promise((resolve, reject) => {
     isOauth2: false,
     userName: formData.userName,
     password: formData.password,
+    
   };
   superagent.post('https://open.e.189.cn/api/logbox/oauth2/loginSubmit.do')
     .set({
@@ -213,6 +213,7 @@ const doTask = async () => {
       result.push(`第${index}次抽奖成功,抽奖获得${res.prizeName}`);
     }
   }
+
   return result;
 };
 
